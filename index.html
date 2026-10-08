@@ -1,24 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Consulta CEP</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Localiza CEP</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
   <body>
+    <main class="container">
+      <section class="hero">
+        <div class="mapa">
+          <img src="mapa-brasil.png" alt="Mapa do Brasil" />
+        </div>
 
-    <div class="container">
-        <h1>Consultar CEP</h1>
+        <div class="conteudo">
+          <h1>Localiza <span>CEP</span></h1>
 
-        <input type="text" id="cep" placeholder="Digite o CEP">
-
-        <button onclick="consultarCEP()">Consultar</button>
-
-        <div id="resultado"></div>
-    </div>
+          <form id="cepForm">
+            <div class="busca">
+              <input
+                id="cep"
+                type="text"
+                inputmode="numeric"
+                maxlength="9"
+                placeholder="Digite o CEP..."
+                autocomplete="postal-code"
+                aria-label="Digite o CEP"
+              />
+              <button type="submit" aria-label="Consultar CEP">⌕</button>
+            </div>
+          </form>
+          <section id="resultado" class="resultado" aria-live="polite">
+            <p class="mensagem">Consulte um CEP para ver o endereço.</p>
+          </section>
+        </div>
+      </section>
+    </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
